@@ -1,11 +1,12 @@
-let product = [
-    {
+
+  var obb= [ {
     "id": 4,
     "title": "newTitle",
     "price": 205,
-    "description": "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
+    "description": "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart  functionality",
     "image_url": "https://i.imgur.com/R2PN9Wq.jpeg"
     },
+    
     {
     "id": 7,
     "title": "Ergonomic Wooden Tuna",
@@ -17,7 +18,7 @@ let product = [
     "id": 9,
     "title": "Electronic Bronze Chips",
     "price": 808,
-    "description": "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four   wheel drive",
+    "description": "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and fourwheel drive",
     "image_url": "https://i.imgur.com/R3iobJA.jpeg"
     },
     {
@@ -34,31 +35,54 @@ let product = [
     "description": "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
     "image_url": "https://i.imgur.com/KeqG6r4.jpeg"
     }
-   ]
-
-   let first_row = document.getElementById("first_row");
+]
 
 
 
-   for(let i= 0 ; i<product.length; i++){
+
+var cardsahir =document.getElementById("c1");
+
+var ppp =obb
+
+
+const newArr = ppp.map((ppp1,e) => {
+
+// console.log(ppp)
 
 
 
-    first_row.innerHTML += `
-<div  class="col-md-4 mb-3 ">
-<div class="card" style="width: 18rem;">
-    <img src=" ${product[i].image_url} " class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title"> ${product[i].title} </h5>
-      <p class="card-text"> ${product[i].description} </p>
-      <p class="card-text"> ${product[i].price} </p>
-      
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-</div>`
 
-   }
+const {title,price,description,image_url}=ppp[e]
+
+
+
+    console.log(title, price, description, image_url);
+  
+    cardsahir.innerHTML += `
+  <div class="card m-2" style="width: 18rem">
+        <img
+          src=${image_url}
+          class="card-img-top"
+          alt="..."
+          height="160px"
+        />
+        <div class="card-body">
+          <h5 class="card-title">${title}</h5>
+          <h5 class="card-title">Price: ${price}</h5>
+          
+          
+          <p class="card-text">
+            ${description}
+          </p>
+          <a href="pg0.html" class="btn btn-primary">Add to Cart</a>
+        </div>
+      </div>
+  `;
+
+
+
+})
+
 
 
 
